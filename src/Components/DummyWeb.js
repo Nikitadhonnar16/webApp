@@ -1,14 +1,23 @@
 import React from 'react'
 import { useEffect } from 'react';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import 'swiper/css'; // Core Swiper styles
-import 'swiper/css/pagination'; // Pagination styles
-import 'swiper/css/navigation'; // Navigation styles
+import  { useRef, useState } from 'react';
 
+ 
 
 
 
 const DummyWeb = () => {
+  const [isPlaying, setIsPlaying] = useState(false);
+  const videoRef = useRef(null);
+  
+ const togglePlayPause = () => {
+    if (isPlaying) {
+      videoRef.current.pause();
+    } else {
+      videoRef.current.play();
+    }
+    setIsPlaying(!isPlaying);
+  };
 
   return (
       <div>
@@ -300,7 +309,7 @@ const DummyWeb = () => {
       <div class="lg:w-1/3 lg:pl-2 mt-6 lg:mt-0 flex justify-center lg:justify-start">
                       <a class="bg-blue-900 text-white px-6 py-3 rounded inline-flex items-center" href="#">
     <div className='d-flex'>
-    <img alt="Costing details document preview" className="mr-2 w-[300px]"  src="https://storage.googleapis.com/a1aa/image/qOF2O4mAFZKCApcPsqlGabl6LeJoWMz5vvf6yMI4bbfjPl7nA.jpg" />
+    <img alt="Costing details document preview" className=" w-[300px]  pt-2"  src="https://storage.googleapis.com/a1aa/image/qOF2O4mAFZKCApcPsqlGabl6LeJoWMz5vvf6yMI4bbfjPl7nA.jpg" />
     <button className='ml-12'>Complete Costing Details</button>
   </div>
   </a>
@@ -310,7 +319,7 @@ const DummyWeb = () => {
    </div>  
 
 
-    <div class="container mx-auto p-4 pr-[350px] ">
+    <div class="container mx-auto p-4 pr-[330px] ">
         <section class="mb-8">
             <h2 class="text-2xl font-bold text-blue-900 mb-4">Gallery Of Sai World Dreams</h2>
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
@@ -362,9 +371,67 @@ const DummyWeb = () => {
         </section>
     </div>   
      
-            
+          <div className="container mx-auto p-4 pr-[330px]">
+      <h1 className="text-xl font-bold text-blue-800 mb-4">Virtual Tour Request</h1>
+      <div className="relative">
+        <video
+          ref={videoRef}
+          className="w-full h-auto"
+          controls
+          onClick={togglePlayPause} // Clicking video toggles play/pause
+        >
+          <source src="https://live-par-2-abr.livepush.io/vod/bigbuckbunnyclip.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+        
+        {/* Play/Pause icon */}
+        <div
+          className="absolute inset-0 bg-black bg-opacity-50 flex justify-center items-center"
+          onClick={togglePlayPause} style={{ zIndex: 100 }} // Clicking on the overlay toggles play/pause
+        >
+          <i
+            className={`fas fa-${isPlaying ? 'pause' : 'play'}-circle text-white text-6xl mb-4 cursor-pointer`}
+          ></i>
+        </div>
+      </div>
+    </div>
    
       
+       <div class=" mx-auto p-4 pr-[330px]">
+        <div class="flex justify-center items-center mb-8">
+            <img alt="Sai World Dreams Logo" class="h-12" height="50" src="https://storage.googleapis.com/a1aa/image/b1gLwzTSttKEHpNrgzoOveelK5BOlcjhanmYg6b6M5RIyf7nA.jpg" width="100"/>
+        </div>
+        <div class="mb-8">
+            <h1 class="text-2xl font-bold mb-4">About Developer</h1>
+            <p class="text-lg">
+                Founded in 1990, Paradise Group develops luxury residential properties &amp; retail malls across the emerging locales of Mumbai &amp; Navi Mumbai. With a firm presence in suburbs such as Kalyan, Chembur, Dombivli, Kharghar, Taloja, &amp; Panvel, the company has built a good niche for itself in the city through the years.
+            </p>
+        </div>
+        <div class="mb-8">
+            <h2 class="text-xl font-bold mb-4">RERA Information</h2>
+            <div class="flex justify-center items-center mb-4">
+                <img alt="QR Code for Sai World Dreams" class="h-24 w-24 mr-4" height="100" src="https://storage.googleapis.com/a1aa/image/YmEkaqSzbzI5BNleeDJLHaW97JA1X1euTH0jkkptYxzXkf3PB.jpg" width="100"/>
+                <div>
+                    <p class="text-lg">Sai World Dreams</p>
+                    <p class="text-lg">MahaRERA - <span class="font-bold">P51700035191</span></p>
+                </div>
+            </div>
+            <p class="text-lg">
+                Sai World Dreams has been registered via MahaRERA registration number: P51800077358 and is available on the website
+                <a class="text-blue-600" href="https://maharera.mahaonline.gov.in/">https://maharera.mahaonline.gov.in/</a> under registered projects.
+            </p>
+        </div>
+        <div class="border-t border-gray-300 pt-4">
+            <p class="text-sm text-gray-600 mb-2">
+                <span class="font-bold">Disclaimer:</span> The content is for information purposes only and does not constitute an offer to avail of any service. Prices mentioned are subject to change without notice and properties mentioned are subject to availability. Images for representation purposes only. This is the official website of authorized marketing partner. We may also send updates to the mobile number/email id registered with us. All Rights Reserved.
+            </p>
+            <p class="text-sm text-gray-600 mb-2">
+                © Copyright | <a class="text-blue-600" href="#">Terms &amp; Conditions</a> | <a class="text-blue-600" href="#">Privacy Policy</a> | <a class="text-blue-600" href="#">Cookies Policy</a>
+            </p>
+        </div>
+    </div>
+  
+
     </div>
   )
 }
