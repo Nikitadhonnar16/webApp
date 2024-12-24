@@ -23,68 +23,53 @@ const DummyWeb = () => {
       <div>
 
        {/* header     */}
-  <header class="bg-white shadow">
-   <div class="container mx-auto flex justify-between items-center py-4 px-6">
-    <div class="flex items-center">
-     <img alt="Paradise Group Logo" class="h-10" height="50" src="https://storage.googleapis.com/a1aa/image/Q5m4wuUCjRpiAdM3WfmgVnG3VHCSjGVK0H2zFeikAZD71t9TA.jpg" width="50"/>
-     <div class="ml-4">
-      <h1 class="text-xl font-bold">
-       SAI WORLD DREAMS
-      </h1>
-      <p class="text-sm text-gray-600">
-       KALYAN-SHIL ROAD, DOMBIVLI
-      </p>
-     </div>
+<header class="bg-white shadow">
+  <div class="container mx-auto flex flex-wrap justify-between items-center py-4 px-6">
+    <div class="flex items-center w-full sm:w-auto">
+      <img alt="Paradise Group Logo" class="h-10" height="50" src="https://storage.googleapis.com/a1aa/image/Q5m4wuUCjRpiAdM3WfmgVnG3VHCSjGVK0H2zFeikAZD71t9TA.jpg" width="50"/>
+      <div class="ml-4">
+        <h1 class="text-xl font-bold">
+          SAI WORLD DREAMS
+        </h1>
+        <p class="text-sm text-gray-600">
+          KALYAN-SHIL ROAD, DOMBIVLI
+        </p>
+      </div>
     </div>
-    <nav class="flex space-x-4">
-     <a class="text-gray-700 hover:text-blue-600" href="#">
-      <i class="fas fa-tags">
-      </i>
-      Price
-     </a>
-     <a class="text-gray-700 hover:text-blue-600" href="#">
-      <i class="fas fa-building">
-      </i>
-      Site &amp; Floor Plan
-     </a>
-     <a class="text-gray-700 hover:text-blue-600" href="#">
-      <i class="fas fa-wifi">
-      </i>
-      Amenities
-     </a>
-     <a class="text-gray-700 hover:text-blue-600" href="#">
-      <i class="fas fa-map-marker-alt">
-      </i>
-      Location
-     </a>
-     <a class="text-gray-700 hover:text-blue-600" href="#">
-      <i class="fas fa-camera">
-      </i>
-      Gallery
-     </a>
-     <a class="text-gray-700 hover:text-blue-600" href="#">
-      <i class="fas fa-video">
-      </i>
-      Virtual Tour Request
-     </a>
-     <a class="text-gray-700 hover:text-blue-600" href="#">
-      <i class="fas fa-file-alt">
-      </i>
-      Brochure
-     </a>
+    <nav class="hidden sm:flex space-x-4">
+      <a class="text-gray-700 hover:text-blue-600" href="#">
+        <i class="fas fa-tags"></i> Price
+      </a>
+      <a class="text-gray-700 hover:text-blue-600" href="#">
+        <i class="fas fa-building"></i> Site &amp; Floor Plan
+      </a>
+      <a class="text-gray-700 hover:text-blue-600" href="#">
+        <i class="fas fa-wifi"></i> Amenities
+      </a>
+      <a class="text-gray-700 hover:text-blue-600" href="#">
+        <i class="fas fa-map-marker-alt"></i> Location
+      </a>
+      <a class="text-gray-700 hover:text-blue-600" href="#">
+        <i class="fas fa-camera"></i> Gallery
+      </a>
+      <a class="text-gray-700 hover:text-blue-600" href="#">
+        <i class="fas fa-video"></i> Virtual Tour Request
+      </a>
+      <a class="text-gray-700 hover:text-blue-600" href="#">
+        <i class="fas fa-file-alt"></i> Brochure
+      </a>
     </nav>
-    <div class="flex items-center space-x-4">
-     <button class="bg-blue-600 text-white px-4 py-2 rounded">
-      Organize Site Visit
-     </button>
-     <a class="text-gray-700 hover:text-blue-600" href="tel:+919619095795">
-      <i class="fas fa-phone">
-      </i>
-      +919619095795
-     </a>
+    <div class="flex items-center space-x-4 w-full sm:w-auto mt-4 sm:mt-0">
+      <button class="bg-blue-600 text-white px-4 py-2 rounded w-full sm:w-auto">
+        Organize Site Visit
+      </button>
+      <a class="text-gray-700 hover:text-blue-600" href="tel:+919619095795">
+        <i class="fas fa-phone"></i> +919619095795
+      </a>
     </div>
-   </div>
+  </div>
 </header>
+
 
 <main className="container mx-auto mt-6 flex items-start">
    {/* Left section over the background image (20% width) */}
@@ -132,7 +117,7 @@ const DummyWeb = () => {
    </div>
 
    {/* Aside section (20% width) on the right, fixed position */}
-   <aside className="lg:w-1/5 bg-white shadow-lg rounded-lg p-6 fixed top-[120px] right-0 z-20 h-full">
+  <aside className="hidden lg:block lg:w-1/5 bg-white shadow-lg rounded-lg p-6 fixed top-[120px] right-0 z-20 h-full">
       <h3 className="text-xl font-bold text-center">Get The Best Quote</h3>
       <form className="mt-4">
         <div className="mb-4">
@@ -217,7 +202,7 @@ const DummyWeb = () => {
           ₹ 49 Lacs* Onwards
          </td>
          <td class="py-2 px-2 border-b">
-          <a class="bg-blue-900 text-white px-2 py-2 rounded" href="#">
+          <a class="bg-blue-900 text-white px-2 py-0 lg:py-2  rounded " href="#">
            Price Breakup
           </a>
          </td>
@@ -233,7 +218,7 @@ const DummyWeb = () => {
           ₹ 76.50 Lacs* Onwards
          </td>
          <td class="py-2 px-2 border-b">
-          <a class="bg-blue-900 text-white px-2 py-2 rounded" href="#">
+          <a class="bg-blue-900 text-white px-2 py-0 lg:py-2  rounded " href="#">
            Price Breakup
           </a>
          </td>
@@ -249,7 +234,7 @@ const DummyWeb = () => {
           ₹ 77.50 Lacs* Onwards
          </td>
          <td class="py-2 px-2 border-b">
-          <a class="bg-blue-900 text-white px-2 py-2 rounded" href="#">
+          <a class="bg-blue-900 text-white px-2 py-0 lg:py-2  rounded " href="#">
            Price Breakup
           </a>
          </td>
@@ -265,7 +250,7 @@ const DummyWeb = () => {
           ₹ 78.50 Lacs* Onwards
          </td>
          <td class="py-2 px-2 border-b">
-          <a class="bg-blue-900 text-white px-2 py-2 rounded" href="#">
+          <a class="bg-blue-900 text-white px-2 py-0 lg:py-2  rounded " href="#">
            Price Breakup
           </a>
          </td>
@@ -281,7 +266,7 @@ const DummyWeb = () => {
           ₹ 88 Lacs* Onwards
          </td>
          <td class="py-2 px-2 border-b">
-          <a class="bg-blue-900 text-white px-2 py-2 rounded" href="#">
+          <a class="bg-blue-900 text-white px-2 py-0 lg:py-2  rounded " href="#">
            Price Breakup
           </a>
          </td>
@@ -297,7 +282,7 @@ const DummyWeb = () => {
           ₹ 1.26 Cr* Onwards
          </td>
          <td class="py-2 px-2 border-b">
-          <a class="bg-blue-900 text-white px-2 py-2 rounded" href="#">
+          <a class="bg-blue-900 text-white px-2 py-0 lg:py-2  rounded " href="#">
            Price Breakup
           </a>
          </td>
@@ -319,7 +304,7 @@ const DummyWeb = () => {
    </div>  
 
 
-    <div class="container mx-auto p-4 pr-[330px] ">
+    <div class="container mx-auto p-4 sm:pr-0 lg:pr-[330px] ">
         <section class="mb-8">
             <h2 class="text-2xl font-bold text-blue-900 mb-4">Gallery Of Sai World Dreams</h2>
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
@@ -371,7 +356,7 @@ const DummyWeb = () => {
         </section>
     </div>   
      
-          <div className="container mx-auto p-4 pr-[330px]">
+          <div className="container mx-auto p-4 sm:pr-0 lg:pr-[330px]">
       <h1 className="text-xl font-bold text-blue-800 mb-4">Virtual Tour Request</h1>
       <div className="relative">
         <video
@@ -397,7 +382,7 @@ const DummyWeb = () => {
     </div>
    
       
-       <div class=" mx-auto p-4 pr-[330px]">
+       <div class=" mx-auto p-4 sm:pr-0 lg:pr-[330px]">
         <div class="flex justify-center items-center mb-8">
             <img alt="Sai World Dreams Logo" class="h-12" height="50" src="https://storage.googleapis.com/a1aa/image/b1gLwzTSttKEHpNrgzoOveelK5BOlcjhanmYg6b6M5RIyf7nA.jpg" width="100"/>
         </div>
@@ -436,4 +421,4 @@ const DummyWeb = () => {
   )
 }
 
-export default DummyWeb
+export default DummyWeb 
